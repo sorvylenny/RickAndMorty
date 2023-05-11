@@ -1,13 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 import {  Router } from '@angular/router';
-import { FormControl, FormGroup, Validators} from '@angular/forms'
+import { FormControl, FormGroup} from '@angular/forms'
 import { CharacterI } from '../../interface/characters.interface';
 import { ApiService } from '../../service/api/api.service';
-
-
-
-
 
 
 @Component({
@@ -18,15 +14,10 @@ import { ApiService } from '../../service/api/api.service';
 export class CharactersComponent implements OnInit {
 
 
-
-
-
-
 constructor(
 
   private api:ApiService,
   private router:Router,
-
 
   ) { }
 
@@ -38,9 +29,6 @@ constructor(
       else {
         this.loadFilterCharacters(this.gender,this.status,this.page)
       }
-
-      // this.loadCharacters (this.page )
-      // this.loadFilterCharacters(this.gender,this.status,this.page)
 
     }
 
@@ -108,11 +96,6 @@ cleanSearch(){
   statusSelection: this.statuSControl,
   });
 
-  //   form = new FormGroup({
-  //   status: this.statuSControl,
-  // });
-
-
 
 
 //llamada al api para buscar todos los personajes
@@ -140,7 +123,6 @@ handlePage (event:PageEvent){
    else {
      this.loadFilterCharacters(this.gender,this.status,event.pageIndex +1)
   }
-// console.log(event)
 }
 
 //llamada al api para buscar los personajes por filtros

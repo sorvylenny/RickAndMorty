@@ -1,7 +1,6 @@
-import { Component,  EventEmitter,  Input,  OnInit, Output} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { ApiService } from '../../service/api/api.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { SingleCharacter } from 'src/app/interface/single-character.interface';
 
 
 
@@ -13,8 +12,6 @@ import { SingleCharacter } from 'src/app/interface/single-character.interface';
 export class CharacterdetailComponent implements OnInit {
 
 character: any
-// @Output() characterDetails = new EventEmitter<void>();
-
 
 constructor(
    private api:ApiService,
@@ -34,7 +31,6 @@ constructor(
    this.api.getCharacterByID(id)
    .subscribe((data:any) => {
    this.character = data;
-   console.log(this.character)
 
   })}
 

@@ -1,0 +1,116 @@
+<app-header></app-header>
+<body>
+
+<div class="contenedor">
+<h2>Buscar Personaje</h2>
+<!--- Search Selector --->
+<div>
+<div >
+
+<div class="search">
+  <h4>Seleccionar Genero</h4>
+<form [formGroup]="form" >
+  <!--- gender Selector --->
+  <mat-form-field appearance="fill"  >
+    <mat-label>Genero</mat-label>
+    <mat-select [formControl]="gendersControl"  name="gender">
+      <mat-option
+      *ngFor="let gender of genders"
+      [value]="gender.valueGender"
+      (click)="genderSearch(gender.valueGender)">
+      {{gender.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <p>Selected: {{gendersControl.value}}</p>
+  </form>
+</div>
+<!--- status Selector --->
+
+<div class="search">
+<h4>Seleccionar Estado</h4>
+<form [formGroup]="form"  >
+  <mat-form-field appearance="fill" >
+    <mat-label>Status</mat-label>
+    <mat-select [formControl]="statuSControl"  name="status">
+      <mat-option
+      *ngFor="let status of statusS"
+      [value]="status.valueStatus"
+      (click)="statusSearch(status.valueStatus)">
+      {{status.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <p  >
+    Selected: {{statuSControl.value}}</p>
+</form >
+</div>
+</div>
+<div class="button">
+      <button mat-raised-button color="primary" class="clean-button"
+      (click)="cleanSearch()">Limpiar Busqueda</button>
+</div>
+    </div>
+</div>
+
+
+
+<div class="contenedor">
+<table mat-table [dataSource]="characters" class="mat-elevation-z8"> -->
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="position">
+    <th mat-header-cell *matHeaderCellDef> No. </th>
+    <td mat-cell *matCellDef="let data"> {{data.id}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Nombre </th>
+    <td mat-cell *matCellDef="let data"> {{data.name}} </td>
+  </ng-container>
+
+  <!-- Species Column -->
+  <ng-container matColumnDef="species">
+    <th mat-header-cell *matHeaderCellDef> Especie</th>
+    <td mat-cell *matCellDef="let data"> {{data.species}} </td>
+  </ng-container>
+
+  <!-- Gender Column -->
+  <ng-container matColumnDef="gender">
+    <th mat-header-cell *matHeaderCellDef> Genero </th>
+    <td mat-cell *matCellDef="let data"> {{data.gender}} </td>
+  </ng-container>
+
+    <!-- Status Column -->
+  <ng-container matColumnDef="status">
+    <th mat-header-cell *matHeaderCellDef> Estado </th>
+    <td mat-cell *matCellDef="let data"> {{data.status}} </td>
+  </ng-container>
+
+    <!-- more Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef class="columnstext"> Ver mas </th>
+    <td mat-cell *matCellDef="let id">
+      <button mat-raised-button color="primary" class="example-button-row"
+      (click)="characterDetails(id.id)">Detalles</button>
+   </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  </div>
+<div>
+  <mat-paginator [length]="maxCharacters"
+                 [pageSize]="pageSize"
+                 (page)  = "handlePage($event)"
+                 aria-label="Select page">
+</mat-paginator>
+</div>
+</body>
+<table>
+

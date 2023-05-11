@@ -1,0 +1,64 @@
+table {
+  width: 100%;
+}
+ .contenedor {
+    display: flex;
+    flex-direction: column;
+    margin:1rem auto;
+    max-width: 600px;
+    box-shadow: -1px 3px 66px 0px rgba(0,0,0,0.75);
+    padding: 1rem;
+}
+.example-button-row {
+    width: 80px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin:1rem auto;
+    max-width: 80px;
+    box-shadow: -1px 3px 6px 0px rgba(0,0,0,0.75);
+    background-color: #0b4499;
+
+}
+.clean-button {
+  width: 145px;
+  text-align: center;
+  display: flex;
+    margin-left: 3rem;
+    margin:  10px ;
+    margin-bottom: 10px;
+    max-width: 300px;
+    box-shadow: -1px 3px 6px 0px rgba(0,0,0,0.75);
+    background-color: #0b4499;
+    float:left;
+  }
+
+  .button{
+    display: flex;
+    margin-right: 14rem;
+    float: right;
+  }
+.columnstext{
+  text-align: center;
+
+}
+
+.search{
+
+float: left;
+width: 200px;
+box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.75);
+margin-left: 4rem;
+}
+.search-status{
+margin:1rem auto;
+float: left;
+width: 200px;
+margin-right: 1rem;
+
+box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.75);
+
+}
+h4{
+  text-align: center;
+}

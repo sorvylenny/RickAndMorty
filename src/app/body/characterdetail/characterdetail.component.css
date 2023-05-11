@@ -1,0 +1,29 @@
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-image: url('https://w7.pngwing.com/pngs/396/63/png-transparent-rick-morty-illustration-rick-sanchez-morty-smith-rick-and-morty-season-3-television-show-adult-swim-rick-and-morty-television-child-face-thumbnail.png');
+  background-size: cover;
+}
+
+ .contenedor {
+    display: flex;
+    flex-direction: column;
+    margin:1rem auto;
+    max-width: 400px;
+    box-shadow: -1px 3px 66px 0px rgba(0,0,0,0.75);
+    padding: 1rem;
+}
+.example-button-row {
+    width: 80px;
+    text-align: center;
+    display: flex;
+     max-width: 80px;
+    box-shadow: -1px 3px 6px 0px rgba(0,0,0,0.75);
+    background-color: #0b4499;
+}
+.button{
+display: flex;
+justify-content: center;
+}

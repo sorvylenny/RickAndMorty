@@ -1,0 +1,28 @@
+<app-header></app-header>
+<div class="contenedor">
+
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title> {{character.name}} </mat-card-title>
+    <mat-card-subtitle>{{character.location.name}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="{{character.image}}" alt="Photo of a {{character.image}}">
+  <mat-card-content>
+    <ul>
+      <li><h3> Genero: {{character.gender}}</h3></li>
+      <li><h3> Estado: {{character.status}}</h3></li>
+      <li><h3> Especie:{{character.species}}</h3></li>
+      <li><h3> Tipo:{{character.type}}</h3></li>
+
+    </ul>
+  </mat-card-content>
+  <mat-card-actions>
+    <div class="button">
+    <button mat-raised-button color="primary"  class="example-button-row" (click)="allCharacters()">Volver</button>
+    </div>
+  </mat-card-actions>
+</mat-card>
+
+
+</div>
